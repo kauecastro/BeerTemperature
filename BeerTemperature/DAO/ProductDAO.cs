@@ -38,7 +38,7 @@ namespace BeerTemperature.DAO
                     products = products.Where(q => q.productName == product.productName).ToList();
 
                 if (products == null)
-                    throw new Exception("There are no products in the database with this id !");
+                    throw new Exception("There are no products in the database with this filter !");
 
                 foreach (var p in products)
                 {
@@ -65,22 +65,27 @@ namespace BeerTemperature.DAO
         public void UpdateById(Product product)
         {
             if (product == null)
-                throw new Exception("Product is required to cretate in database !");
+                throw new Exception("Product is required to update in database !");
 
             Product productResponse = new Product();
 
             using (var context = new EntityContext())
             {
-                var products = from p in context.Products select p;
 
-                if (product.id > 0)
-                    products = products.Where(q => q.id == product.id);
+                var products = context.Products.Include(x => x.beerType).FirstOrDefault(x => x.id == product.id);
 
                 if (products == null)
                     throw new Exception("There are no products in the database with this id !");
 
-                productResponse = products.FirstOrDefault();
-                productResponse.productName = product.productName;
+                if (product.productName != null && !string.IsNullOrEmpty(product.productName))
+                    products.productName = product.productName;
+
+                if (product.beerType.id > 0)
+                {
+                    var beerType = context.BeerTypes.Where(q => q.id == product.beerType.id).FirstOrDefault();
+                    if (beerType != null)
+                        product.beerType = beerType;
+                }
                 context.SaveChanges();
             }
         }
