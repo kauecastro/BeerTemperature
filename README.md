@@ -37,15 +37,15 @@ Type name é a categoria da cerveja.
 Para o metodos de Alterar produtos, o TypeName não é obrigatório, a não ser que vc queira alterar a categoria do produto.
 *Ultilize como base esta lista:
 
-Weissbier	
-Pilsens	
-Weizenbier	
-Red ale	
-India pale ale
-IPA	
-Dunkel	
-Imperial Stouts	
-Brown ale
+* Weissbier	
+* Pilsens	
+* Weizenbier	
+* Red ale	
+* India pale ale
+* IPA	
+* Dunkel	
+* Imperial Stouts	
+* Brown ale
 
 ##<b>beerName </b>
 O beerName é o nome do produto. 
