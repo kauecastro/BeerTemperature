@@ -51,4 +51,10 @@ Brown ale
 O beerName é o nome do produto. 
 Para o metodos de Alterar produtos, o beerName não é obrigatório, a não ser que vc queira alterar o nome do produto.
 
+##<b>Acesso ao banco de dados. </b>
+* Endpoint: beers.cog1sg4hvu7z.us-west-2.rds.amazonaws.com.
+* User: kaue
+* Password: kaue12345
+
+
 
