@@ -11,5 +11,6 @@ namespace BeerTemperature.Models
         public string name { get; set; }
         public int minTemperature { get; set; }
         public int maxTemperature { get; set; }
+        public List<Product> products { get; set; }
     }
 }

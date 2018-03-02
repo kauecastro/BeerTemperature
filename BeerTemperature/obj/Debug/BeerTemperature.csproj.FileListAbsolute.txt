@@ -161,3 +161,5 @@ C:\Users\Kauê Castro\Documents\Projects\BeerTemperature\BeerTemperature\bin\Sys
 C:\Users\Kauê Castro\Documents\Projects\BeerTemperature\BeerTemperature\obj\Debug\BeerTemperature.csprojResolveAssemblyReference.cache
 C:\Users\Kauê Castro\Documents\Projects\BeerTemperature\BeerTemperature\obj\Debug\BeerTemperature.dll
 C:\Users\Kauê Castro\Documents\Projects\BeerTemperature\BeerTemperature\obj\Debug\BeerTemperature.pdb
+D:\Projects\BeerTemperature\BeerTemperature\BeerTemperature\obj\Debug\BeerTemperature.Migrations.FirstMigration.resources
+D:\Projects\BeerTemperature\BeerTemperature\BeerTemperature\obj\Debug\BeerTemperature.csproj.GenerateResource.Cache

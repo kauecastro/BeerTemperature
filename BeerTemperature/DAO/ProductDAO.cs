@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BeerTemperature.Models;
+using System.Data.Entity;
 
 namespace BeerTemperature.DAO
 {
@@ -12,32 +13,50 @@ namespace BeerTemperature.DAO
         {
             if (product == null)
                 throw new Exception("Product is required to cretate in database !");
+
             using (var context = new EntityContext())
             {
+                product.beerType = context.BeerTypes.Where(q => q.id == product.beerType.id).FirstOrDefault();
                 context.Products.Add(product);
                 context.SaveChanges();
             }
         }
 
-        public Product Read(Product product)
+        public List<Product> Read(Product product)
         {
             if (product == null)
                 throw new Exception("Product is required to cretate in database !");
 
-            Product productResponse = new Product();
+            List<Product> productResponse = new List<Product>();
             using (var context = new EntityContext())
             {
-                var products = from p in context.Products select p;
+                var products = context.Products.Include(x => x.beerType).ToList();
 
                 if (product.id > 0)
-                    products = products.Where(q => q.id == product.id);
+                    products = products.Where(q => q.id == product.id).ToList();
                 if (product.productName != null && !string.IsNullOrEmpty(product.productName))
-                    products = products.Where(q => q.productName == product.productName);
+                    products = products.Where(q => q.productName == product.productName).ToList();
 
                 if (products == null)
                     throw new Exception("There are no products in the database with this id !");
 
-                productResponse = products.FirstOrDefault();
+                foreach (var p in products)
+                {
+                    BeetType beerType = new BeetType()
+                    {
+                        id = p.beerType.id,
+                        name = p.beerType.name,
+                        minTemperature = p.beerType.minTemperature,
+                        maxTemperature = p.beerType.maxTemperature
+                    };
+
+                    productResponse.Add(new Product()
+                    {
+                        id = p.id,
+                        productName = p.productName,
+                        beerType = beerType
+                    });
+                }
             }
 
             return productResponse;
