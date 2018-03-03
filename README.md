@@ -8,23 +8,23 @@ Esta API permite você cadastrar cervejas que você curte, com os tipos e temper
  
 *Cadastrar um produto: 
 
-http://<DOMAIN>/Product/CreateProduct?beerName=NAME&typeName=NAME
+http://DOMAIN/Product/CreateProduct?beerName=NAME&typeName=NAME
   
 *Ler produtos  
   
-http://<DOMAIN>/Product/ReadProducts?beerName=NAME
+http://DOMAIN/Product/ReadProducts?beerName=NAME
     
 Alterar Produtos 
     
-http://<DOMAIN>/Product/UpdateProduct?id=<ID>beerName=NAME&typeName=NAME
+http://DOMAIN/Product/UpdateProduct?id=<ID>beerName=NAME&typeName=NAME
 
 Deletar Produtos:
 
-http://<DOMAIN>/Product/DeleteProduct?beerName=NAME
+http://DOMAIN/Product/DeleteProduct?beerName=NAME
 
 Pegar o a temperatura minima de um produto
 
-http://<DOMAIN>/Product/GetMinTemperature?beerName=NAME
+http://DOMAIN/Product/GetMinTemperature?beerName=NAME
 
 ##<b>TypeName </b>
 Type name é a categoria da cerveja. 
