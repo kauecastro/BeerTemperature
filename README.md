@@ -2,13 +2,7 @@
 
 Para quem gosta de cervejas, esta é a sua API ! :)
 
-Esta cerveja permite você cadastras cervejas que você curte, com os tipos e temperaturas, com a finalidade de obter dados quando você precisar.
-
-##<b>Requisitos</b>
-
-Você precisa do visual Studio para rodar o projeto.
-
-Basta fazer o download pelo: https://www.visualstudio.com/pt-br/?rr=https%3A%2F%2Fwww.google.com.br%2F
+Esta API permite você cadastrar cervejas que você curte, com os tipos e temperaturas, com a finalidade de obter dados quando você precisar.
 
 ##<b>Endpoints</b>
  
